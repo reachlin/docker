@@ -1,4 +1,6 @@
-# An image with IBM bluemix container CLI installed. It is forked from the official dind and replaced alpine linux with debian. It should only be used as development purpose.
+# Bluemix container CLI
+
+An image with IBM bluemix container CLI installed. It is forked from the official dind and replaced alpine linux with debian. It should only be used as development purpose.
 
 * To run: `docker run --name bluemix -d --privileged reachlin/bluemix`
 * To verify: `docker exec blumix cf plugins`
