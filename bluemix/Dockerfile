@@ -1,4 +1,4 @@
-FROM reachlin/dind:1.9
+FROM reachlin/dind
 MAINTAINER reachlin@gmail.com
 
 # COPY latest cf.deb /
