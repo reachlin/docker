@@ -10,3 +10,5 @@ docker exec bluemix cf login -u "your email" -p "your password" -o "orgnization"
 docker exec bluemix cf ic init
 docker exec bluemix cf ic images
 ```
+
+Last updated 06/08/2016
