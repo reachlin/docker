@@ -1,6 +1,6 @@
 # Bluemix container CLI
 
-An image with IBM bluemix CLI installed.
+An image with IBM bluemix cf command line tools installed. It includes container plugins and is based on the official DIND image.
 
 
 Usage:
@@ -11,4 +11,4 @@ docker exec bluemix cf ic init
 docker exec bluemix cf ic images
 ```
 
-Last updated 06/08/2016
+Last updated 07/05/2016 with cf ic version 0.8.897
