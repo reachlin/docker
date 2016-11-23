@@ -22,4 +22,4 @@ docker exec bluemix docker images
 
 ```
 
-Last updated 10/12/2016
+Last updated 11/23/2016
