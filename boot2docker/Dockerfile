@@ -4,9 +4,8 @@ MAINTAINER reachlin@gmail.com
 # disable dhcp
 # RUN sed -i 's/dhcp/staticip/g' "$ROOTFS/opt/bootscript.sh"
 
-COPY staticip.sh "$ROOTFS/etc/rc.d/"
-RUN chmod a+x "$ROOTFS/etc/rc.d/staticip.sh"
-RUN "$ROOTFS/etc/rc.d/staticip.sh"
+COPY staticip.sh "$ROOTFS/opt/bootlocal.sh"
+RUN chmod a+x "$ROOTFS/opt/bootlocal.sh"
 
 RUN /tmp/make_iso.sh
 CMD ["cat", "boot2docker.iso"]
