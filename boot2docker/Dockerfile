@@ -1,11 +1,11 @@
 FROM boot2docker/boot2docker
 MAINTAINER reachlin@gmail.com
 
-# disable dhcp
-# RUN sed -i 's/dhcp/staticip/g' "$ROOTFS/opt/bootscript.sh"
+# prepend static ip before dhcp
+RUN sed -i 's/dhcp\.sh/i /etc/rc.d/staticip.sh' "$ROOTFS/opt/bootscript.sh"
 
-COPY staticip.sh "$ROOTFS/opt/bootlocal.sh"
-RUN chmod a+x "$ROOTFS/opt/bootlocal.sh"
+COPY staticip.sh "$ROOTFS/etc/rc.d/"
+RUN chmod a+x "$ROOTFS/etc/rc.d/staticip.sh"
 
 RUN /tmp/make_iso.sh
 CMD ["cat", "boot2docker.iso"]
