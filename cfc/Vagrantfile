@@ -91,7 +91,7 @@ Vagrant.configure("2") do |config|
     cp /vagrant/id_rsa /root/.ssh/
     cp /vagrant/id_rsa.pub /root/.ssh/
     cp /vagrant/id_rsa.pub /root/.ssh/authorized_keys
-    sed -i -r "s/127.0.0.1\s+cloudlocal/192.168.99.201   cloudlocal/g" /etc/hosts
+    cp /vagrant/etc_hosts /etc/hosts
   SHELL
 
   # install cfc
