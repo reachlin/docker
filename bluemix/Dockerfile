@@ -18,22 +18,15 @@ RUN set -x \
   && rm docker.tgz \
   && docker -v
 
-# install Cloud Foundry CLI
-RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -
-RUN echo "deb http://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-RUN apt-get update
-RUN apt-get install -y cf-cli
-
-# install Bluemix CLI
-ADD http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/Bluemix_CLI_0.5.2_amd64.tar.gz ./bx.tar.gz
-RUN tar -xvf bx.tar.gz
-RUN Bluemix_CLI/install_bluemix_cli
-RUN bx plugin install container-service -r Bluemix
-
 # install kubectl
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl 
 RUN mv kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
+# install Bluemix CLI
+ADD http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/Bluemix_CLI_0.6.1_amd64.tar.gz ./bx.tar.gz
+RUN tar -xvf bx.tar.gz
+RUN Bluemix_CLI/install_bluemix_cli
+RUN bx plugin install container-service -r Bluemix
 
 ENTRYPOINT tail -f /dev/null

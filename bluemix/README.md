@@ -2,6 +2,8 @@
 
 An image with IBM bluemix cf command line tools installed. It includes container plugins and is based on the official DIND image.
 
+Support bx cli, and removed the old cf cli.
+
 *** New Stuff ***
 
 Added CLI to support IBM Kubernetes Cluster
@@ -10,9 +12,7 @@ Added CLI to support IBM Kubernetes Cluster
 
 ```
 docker run --name bluemix -d --privileged reachlin/bluemix
-docker exec bluemix cf login -u "your email" -p "your password" -o "orgnization" -s "space" -a api.ng.bluemix.net
-docker exec bluemix cf ic init
-docker exec bluemix cf ic images
+docker exec bluemix bx help
 ```
 
 ## k8s Usage:
@@ -43,4 +43,4 @@ docker exec bluemix docker images
 
 ```
 
-Last updated 04/21/2017, upgrade os, docker, kubectl
+Last updated 11/10/2017, upgrade os, docker, kubectl
