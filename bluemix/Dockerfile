@@ -24,7 +24,7 @@ RUN mv kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
 # install Bluemix CLI
-ADD http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/Bluemix_CLI_0.6.1_amd64.tar.gz ./bx.tar.gz
+ADD http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/latest/Bluemix_CLI_amd64.tar.gz ./bx.tar.gz
 RUN tar -xvf bx.tar.gz
 RUN Bluemix_CLI/install_bluemix_cli
 RUN bx plugin install container-service -r Bluemix
