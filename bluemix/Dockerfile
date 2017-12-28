@@ -28,5 +28,6 @@ ADD http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/latest/Bluemix_CLI_a
 RUN tar -xvf bx.tar.gz
 RUN Bluemix_CLI/install_bluemix_cli
 RUN bx plugin install container-service -r Bluemix
+RUN bx plugin install container-registry -r Bluemix
 
 ENTRYPOINT tail -f /dev/null
