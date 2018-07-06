@@ -43,6 +43,4 @@ docker exec bluemix docker images
 
 ```
 
-Last updated 11/10/2017, upgrade os, docker, kubectl
-bump version 07/04/2018
-
+Last updated 07/06/2018, upgrade tools to the latest version
