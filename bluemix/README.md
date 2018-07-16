@@ -43,4 +43,4 @@ docker exec bluemix docker images
 
 ```
 
-Last updated 07/06/2018, upgrade tools to the latest version
+Last updated 07/16/2018, upgrade tools to the latest version
