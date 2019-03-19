@@ -24,10 +24,7 @@ RUN mv kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
 # install Bluemix CLI
-ADD https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 ./bx.tar.gz
-RUN tar -xvf bx.tar.gz
-RUN Bluemix_CLI/install_bluemix_cli
-RUN bx plugin install container-service -r Bluemix
-RUN bx plugin install container-registry -r Bluemix
+RUN curl -sL https://ibm.biz/idt-installer | bash
+RUN ibmcloud dev help
 
 ENTRYPOINT tail -f /dev/null
